@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'MadimiOne';
+  src: url('assets/fonts/MadimiOne-Regular.ttf');
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: MadimiOne;
+}
