@@ -16,11 +16,11 @@ export class CheckerService {
       return ['red', 'red', 'red'];
     }
 
-    if (/^[a-zA-Z]+$/.test(password) || /^[0-9]+$/.test(password) || /^[!@#$%^&*(),.?":{}|<>]+$/.test(password)) {
+    if (/^[a-zA-Zа-яА-Я]+$/.test(password) || /^[0-9]+$/.test(password) || /^[!@#$%^&*(),.?":{}|<>]+$/.test(password)) {
       return ['red', 'grey', 'grey']
     }
 
-    if (/^[a-zA-Z0-9]+$/.test(password) || /^[a-zA-Z!@#$%^&*(),.?":{}|<>]+$/.test(password) || /^[0-9!@#$%^&*(),.?":{}|<>]+$/.test(password)) {
+    if (/^[a-zA-Zа-яА-Я0-9]+$/.test(password) || /^[a-zA-Zа-яА-Я!@#$%^&*(),.?":{}|<>]+$/.test(password) || /^[0-9!@#$%^&*(),.?":{}|<>]+$/.test(password)) {
       return ['yellow', 'yellow', 'grey']
     }
 
