@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
-import { CheckerService } from '../../shared/services/checker.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-password-checker',
   templateUrl: './password-checker.component.html',
   styleUrls: ['./password-checker.component.scss']
 })
-export class PasswordCheckerComponent {
-  circles: string[] = ['grey', 'grey', 'grey']
-  password: string = '';
+export class PasswordCheckerComponent implements OnInit {
+  passwordForm!: FormGroup;
 
-  constructor(private _checkerService: CheckerService) { }
+  constructor(private fb: FormBuilder) { }
 
-  checkPasswordStrength() {
-    this.circles = this._checkerService.checkPassword(this.password)
+  ngOnInit(): void {
+    this.passwordForm = this.fb.group({
+      password: ''
+    });
   }
 }
